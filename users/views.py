@@ -17,8 +17,9 @@ class UserCreateView(APIView):
         return Response(serializer.errors, status=400)
     
 class UserLoginView(APIView):
+    serializer_class = UserLoginSerializer
     def post(self, request):
-        serializer = UserLoginSerializer(data=request.data)
+        serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             # Implement login logic here
             username = serializer.validated_data['username']
