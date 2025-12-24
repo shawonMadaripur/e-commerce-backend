@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    "corsheaders",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,6 @@ INSTALLED_APPS = [
     'products',
     "rest_framework",
     'users',
-    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -54,6 +54,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True 
+
+# csrf token 
+CSRF_TRUSTED_ORIGINS = [
+    "https://api-practice-wmvp.onrender.com"
+]
+
 
 ROOT_URLCONF = 'e_commerce_backend.urls'
 
@@ -134,4 +142,4 @@ MEDIA_URL = '/media/'
 # Path where media is stored'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-CORS_ALLOWED_ORIGINS = [ "http://localhost:3000", "http://127.0.0.1:5500", ]
+
