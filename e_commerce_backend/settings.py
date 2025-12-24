@@ -59,7 +59,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # csrf token 
 CSRF_TRUSTED_ORIGINS = [
-    "https://api-practice-wmvp.onrender.com"
+    "https://e-commerce-backend-n6mh.onrender.com"
 ]
 
 
